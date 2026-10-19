@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Christina Sebueng | Data Science Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e0e0e0;line-height:1.7}
+a{text-decoration:none}
+nav{position:sticky;top:0;background:#0f1117ee;backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;border-bottom:1px solid #2a2a3a;z-index:100}
+.logo{font-size:1.1rem;font-weight:700;color:#7c6af7;letter-spacing:1px}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:#aaa;font-size:.9rem;transition:color .2s}
+nav ul a:hover{color:#fff}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;background:radial-gradient(ellipse at 50% 0%,#1e1b4b,#0f1117 65%)}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:.75rem}
+.hero h1 span{color:#7c6af7}
+.hero p{max-width:580px;color:#9ca3af;font-size:1.05rem;margin-bottom:2rem}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{padding:.7rem 1.6rem;border-radius:8px;font-size:.9rem;font-weight:600;transition:all .2s;display:inline-block;border:none;cursor:pointer}
+.bp{background:#7c6af7;color:#fff}.bp:hover{background:#6355d4}
+.bo{background:transparent;border:1px solid #444;color:#ccc}.bo:hover{border-color:#7c6af7;color:#fff}
+.vlog{margin-top:3rem;width:100%;max-width:760px;background:#16192a;border:1px solid #2a2a3a;border-radius:12px;overflow:hidden}
+.vhdr{padding:.65rem 1.5rem;font-size:.72rem;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;border-bottom:1px solid #2a2a3a}
+.vlog table{width:100%;border-collapse:collapse}
+.vlog th{padding:.55rem 1.5rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:#6b7280;border-bottom:1px solid #1f2235}
+.vlog td{padding:.65rem 1.5rem;font-size:.86rem;color:#d1d5db;border-bottom:1px solid #1a1d2e}
+.vlog tr:last-child td{border-bottom:none}
+.bi{background:#3b1219;color:#f87171;padding:.1rem .5rem;border-radius:4px;font-size:.75rem;font-weight:600}
+.bpa{background:#052e16;color:#4ade80;padding:.1rem .5rem;border-radius:4px;font-size:.75rem;font-weight:600}
+.bf{background:#2d1f00;color:#fbbf24;padding:.1rem .5rem;border-radius:4px;font-size:.75rem;font-weight:600}
+.vft{padding:.55rem 1.5rem;font-size:.78rem;color:#6b7280;border-top:1px solid #2a2a3a}
+.s{max-width:1080px;margin:0 auto;padding:4.5rem 2rem}
+.sl{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:#7c6af7;margin-bottom:.3rem;font-weight:600}
+h2{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.dv{width:44px;height:3px;background:#7c6af7;border-radius:2px;margin:.4rem 0 2.2rem}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.at p{color:#9ca3af;margin-bottom:.9rem;font-size:.93rem}
+.asg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sc{background:#16192a;border:1px solid #2a2a3a;border-radius:10px;padding:1.1rem;text-align:center}
+.sc .n{font-size:1.7rem;font-weight:800;color:#7c6af7}
+.sc .l{font-size:.75rem;color:#6b7280;margin-top:.15rem}
+.sg{display:flex;flex-wrap:wrap;gap:.65rem}
+.st{background:#1e1b4b;border:1px solid #312e81;color:#a5b4fc;padding:.35rem .9rem;border-radius:999px;font-size:.82rem}
+.pc{background:#16192a;border:1px solid #2a2a3a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s;margin-bottom:1.8rem}
+.pc:hover{border-color:#7c6af7;transform:translateY(-3px)}
+.cm{padding:1.4rem 1.4rem 0}
+.ct{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:#7c6af7;font-weight:600;margin-bottom:.2rem}
+.cw{font-size:.78rem;color:#6b7280;margin-bottom:.6rem}
+.cm h3{font-size:1.2rem;color:#fff;margin-bottom:.6rem}
+.cm p{color:#9ca3af;font-size:.88rem;margin-bottom:.9rem}
+.cs{display:flex;gap:2rem;flex-wrap:wrap;padding:.9rem 1.4rem;background:#0f1117;border-top:1px solid #2a2a3a;border-bottom:1px solid #2a2a3a}
+.sn{font-size:1.4rem;font-weight:800;color:#7c6af7}
+.slb{font-size:.72rem;color:#6b7280}
+.cb{padding:1.1rem 1.4rem}
+.cb ul{color:#9ca3af;font-size:.86rem;padding-left:1.1rem;margin-bottom:.9rem}
+.cb ul li{margin-bottom:.25rem}
+.tls{font-size:.78rem;color:#6b7280;margin-bottom:.9rem;font-family:monospace}
+.cl{display:flex;gap:.6rem;flex-wrap:wrap}
+.cl a{font-size:.82rem;color:#7c6af7;border:1px solid #312e81;padding:.25rem .8rem;border-radius:6px;transition:background .2s}
+.cl a:hover{background:#1e1b4b}
+.cif{width:100%;display:block;border-bottom:1px solid #2a2a3a;max-height:320px;object-fit:cover}
+.twoi{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:0 1.4rem 1.1rem}
+.il{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:#7c6af7;margin-bottom:.4rem;font-weight:600;margin-top:.9rem}
+.ci{width:100%;border-radius:8px;border:1px solid #2a2a3a;display:block}
+.rt{background:#16192a;border:1px solid #2a2a3a;border-radius:12px;overflow:hidden}
+.rt table{width:100%;border-collapse:collapse}
+.rt th{padding:.6rem 1.4rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:#6b7280;border-bottom:1px solid #2a2a3a;background:#0f1117}
+.rt td{padding:.9rem 1.4rem;font-size:.86rem;color:#d1d5db;border-bottom:1px solid #1a1d2e;vertical-align:top}
+.rt tr:last-child td{border-bottom:none}
+.rt td:first-child{color:#fff;font-weight:600;width:28%}
+.rt tr:hover td{background:#1a1d2e}
+.cbox{background:#16192a;border:1px solid #2a2a3a;border-radius:14px;padding:3rem;text-align:center;max-width:580px;margin:0 auto}
+.cbox p{color:#9ca3af;margin-bottom:1.5rem}
+footer{text-align:center;padding:2rem;border-top:1px solid #2a2a3a;color:#374151;font-size:.82rem}
+@media(max-width:700px){.ag,.twoi{grid-template-columns:1fr}nav ul{gap:1rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">CS.</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#role">For the Role</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>Christina<br/><span>Sebueng</span></h1>
+  <p>Turning raw, messy data into cleaned datasets, clear visualisations, and models a client can use.</p>
+  <div class="hbtns">
+    <a class="btn bp" href="#projects">View Projects</a>
+    <a class="btn bo" href="https://github.com/csebueng-spec/csebueng-spec.github.io" target="_blank">See all work on GitHub</a>
+  </div>
+  <div class="vlog">
+    <div class="vhdr">Validation Log &mdash; From My Project Notebooks</div>
+    <table>
+      <thead><tr><th>Field</th><th>Found</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>Cholesterol</td><td>0 in 172 rows</td><td><span class="bi">Invalid</span></td><td>Replaced with median</td></tr>
+        <tr><td>RestingBP</td><td>0 in 1 row</td><td><span class="bi">Invalid</span></td><td>Replaced with median</td></tr>
+        <tr><td>HR dataset</td><td>1,470 rows</td><td><span class="bpa">Passed</span></td><td>No missing values or duplicates</td></tr>
+        <tr><td>Constant columns</td><td>3 found</td><td><span class="bf">Flagged</span></td><td>Marked for removal</td></tr>
+      </tbody>
+    </table>
+    <div class="vft">Heart disease data: 918 rows, 12 columns &nbsp;&middot;&nbsp; HR attrition data: 1,470 rows, 35 columns.</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="s" id="about">
+  <div class="sl">About Me</div>
+  <h2>Driven by data. Grounded in purpose.</h2>
+  <div class="dv"></div>
+  <div class="ag">
+    <div class="at">
+      <p>I am a Data Science student at IU International University of Applied Sciences, working toward a career change into data and analytics.</p>
+      <p>Through an internship at AnalystLab Africa (Jul&ndash;Sep 2026), I built hands-on experience across data cleaning, exploratory analysis, statistical testing, machine learning, and business intelligence reporting.</p>
+      <p>My goal is to become an expert data scientist who can apply these skills to real-world problems &mdash; in healthcare, HR, and retail to start.</p>
+      <p><strong style="color:#a5b4fc">Studying:</strong> Data Science, IU International University of Applied Sciences<br/>
+      <strong style="color:#a5b4fc">Experience:</strong> Data Science Intern, AnalystLab Africa, Jul&ndash;Sep 2026</p>
+    </div>
+    <div class="asg">
+      <div class="sc"><div class="n">5</div><div class="l">Projects Completed</div></div>
+      <div class="sc"><div class="n">173</div><div class="l">Impossible Values Fixed</div></div>
+      <div class="sc"><div class="n">75%</div><div class="l">No-shows Flagged</div></div>
+      <div class="sc"><div class="n">12.64M</div><div class="l">Sales Analysed (USD)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="s" id="skills">
+  <div class="sl">Technical Skills</div>
+  <h2>Tools &amp; Technologies</h2>
+  <div class="dv"></div>
+  <div class="sg">
+    <span class="st">Python</span><span class="st">Pandas</span><span class="st">NumPy</span><span class="st">SciPy</span>
+    <span class="st">scikit-learn</span><span class="st">Matplotlib</span><span class="st">Seaborn</span>
+    <span class="st">Power BI Desktop</span><span class="st">Logistic Regression</span><span class="st">Random Forest</span>
+    <span class="st">Mutual Information</span><span class="st">Google Colab</span><span class="st">Jupyter Notebook</span>
+    <span class="st">Data Cleaning</span><span class="st">EDA</span><span class="st">Hypothesis Testing</span>
+    <span class="st">Feature Engineering</span><span class="st">Business Reporting</span>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="s" id="projects">
+  <div class="sl">Work</div>
+  <h2>Projects</h2>
+  <p style="color:#6b7280;margin-bottom:2.2rem;font-size:.93rem">Each one comes from the AnalystLab Africa Data Science programme. Where a repository is linked, the notebook, data files and reports are there.</p>
+
+  <!-- 1. Heart Disease Cleaning -->
+  <div class="pc">
+    <div class="cm">
+      <div class="ct">Data Cleaning</div><div class="cw">Heart disease &middot; Week 2</div>
+      <h3>Heart Disease: cleaning and preparing a dataset</h3>
+      <p>Took a raw clinical dataset and turned it into two new files: a cleaned version and a version ready for machine learning. Every preprocessing decision is documented in a written report.</p>
+    </div>
+    <div class="cs">
+      <div><div class="sn">918 &times; 12</div><div class="slb">rows and columns</div></div>
+      <div><div class="sn">173</div><div class="slb">impossible values fixed</div></div>
+      <div><div class="sn">3</div><div class="slb">new features created</div></div>
+    </div>
+    <div class="cb">
+      <ul>
+        <li>Inspected shape, types, missing values and duplicates</li>
+        <li>Fixed impossible zeros in Cholesterol and RestingBP</li>
+        <li>Created Age_Group, BP_Category and HR_Efficiency</li>
+        <li>Encoded categories three ways: label, one-hot, ordinal</li>
+        <li>Capped outliers with IQR method; scaled continuous features; dropped low-importance features</li>
+      </ul>
+      <div class="tls">Python &middot; Pandas &middot; NumPy &middot; Scikit-learn &middot; Matplotlib &middot; Seaborn</div>
+      <div class="cl">
+        <a href="https://github.com/csebueng-spec/HeartDiseasePrediction" target="_blank">Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Heart Disease Analysis -->
+  <div class="pc">
+    <div class="cm">
+      <div class="ct">Analysis and Report</div><div class="cw">Heart disease &middot; Week 3</div>
+      <h3>Heart Disease: advanced analysis and business insights</h3>
+      <p>Built on the cleaned data to find what matters most. Tested ideas with statistics, checked new features against the evidence, and wrote a Business Insights and Recommendations report for the client.</p>
+    </div>
+    <div class="cs">
+      <div><div class="sn">14</div><div class="slb">visualisations</div></div>
+      <div><div class="sn">5</div><div class="slb">hypothesis tests</div></div>
+      <div><div class="sn">4</div><div class="slb">engineered features checked</div></div>
+    </div>
+    <div class="cb">
+      <ul>
+        <li>MaxHR and Oldpeak were the strongest numerical predictors</li>
+        <li>Asymptomatic chest pain carried a heart disease rate of about 79%</li>
+        <li>Final modelling dataset saved as heart_final_modelling.csv</li>
+      </ul>
+      <div class="tls">Python &middot; SciPy &middot; Scikit-learn &middot; Mutual Information &middot; Random Forest importance</div>
+      <div class="cl">
+        <a href="https://github.com/csebueng-spec/HeartDiseasePrediction" target="_blank">Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Employee Attrition -->
+  <div class="pc">
+    <div class="cm">
+      <div class="ct">Exploring Data</div><div class="cw">HR analytics &middot; Week 1</div>
+      <h3>Employee Attrition Analysis</h3>
+      <p>Investigated why employees leave a manufacturing company, starting from seven plain business questions. Checked the data first, then answered each question with a chart.</p>
+    </div>
+    <div class="cs">
+      <div><div class="sn">1,470</div><div class="slb">employees</div></div>
+      <div><div class="sn">16.1%</div><div class="slb">attrition rate</div></div>
+      <div><div class="sn">8</div><div class="slb">charts</div></div>
+    </div>
+    <div class="cb">
+      <ul>
+        <li>Overtime workers left at ~30% vs ~10% for others</li>
+        <li>Sales Representatives had the highest turnover, near 40%</li>
+        <li>Most people who left did so in their first one to three years</li>
+        <li>Four reports: business understanding, dataset inspection, data visualisation and reflection</li>
+      </ul>
+      <div class="tls">Python &middot; Pandas &middot; NumPy &middot; Matplotlib &middot; Seaborn &middot; Google Colab</div>
+      <div class="cl">
+        <a href="https://github.com/csebueng-spec/employee-attrition-analysis" target="_blank">Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Global Superstore -->
+  <div class="pc">
+    <img class="cif" src="https://raw.githubusercontent.com/csebueng-spec/csebueng-spec.github.io/main/global-superstore-dashboard.png" alt="Global Superstore Power BI Dashboard" onerror="this.style.display='none'"/>
+    <div class="cm">
+      <div class="ct">Dashboard and Report</div><div class="cw">Global Superstore &middot; Week 2</div>
+      <h3>Global Superstore: Power BI dashboard and business insights report</h3>
+      <p>Built an interactive Power BI dashboard on the Global Superstore dataset. Opens with headline figures, then breaks sales and profit down by region, customer segment, product category and country &mdash; with filters for region and order date.</p>
+    </div>
+    <div class="cs">
+      <div><div class="sn">12.64M</div><div class="slb">total sales</div></div>
+      <div><div class="sn">1.47M</div><div class="slb">total profit</div></div>
+      <div><div class="sn">25K</div><div class="slb">orders</div></div>
+    </div>
+    <div class="cb">
+      <ul>
+        <li>Central is the top region for sales</li>
+        <li>Technology is the most profitable category &mdash; 4.74M of the 12.64M total</li>
+        <li>Consumer is the largest customer segment</li>
+        <li>Business Insights Report: 5 insights, 3 risks, 3 opportunities</li>
+      </ul>
+      <div class="tls">Power BI Desktop &middot; Business reporting</div>
+      <div class="cl">
+        <a href="https://github.com/csebueng-spec/AnalystLab-Africa-Week2" target="_blank">Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. HealthConnect -->
+  <div class="pc">
+    <div class="cm">
+      <div class="ct">Modelling</div><div class="cw">HealthConnect Clinic &middot; Weeks 4&ndash;7</div>
+      <h3>HealthConnect Clinic: predicting missed appointments</h3>
+      <p>Built a model to flag patients likely to miss an appointment, so the clinic can contact them first. Compared a Logistic Regression baseline with a Random Forest, then changed the decision threshold to catch more of the real no-shows.</p>
+    </div>
+    <div class="cs">
+      <div><div class="sn">75%</div><div class="slb">no-shows flagged (up from 60%)</div></div>
+      <div><div class="sn">0.665</div><div class="slb">best F1 score</div></div>
+      <div><div class="sn">12 of 18</div><div class="slb">features selected</div></div>
+    </div>
+    <div class="cb">
+      <p style="color:#9ca3af;font-size:.87rem;margin-bottom:.9rem">Before modelling I defined the problem: the target, the features, a patient-level split so no patient appears in both training and test data, median filling for missing values, and the risk of bias by gender and age. Recall was the main measure because missing a no-show costs the clinic more than a false alarm.</p>
+    </div>
+    <div class="twoi">
+      <div>
+        <div class="il">Problem Definition Summary</div>
+        <img class="ci" src="https://raw.githubusercontent.com/csebueng-spec/csebueng-spec.github.io/main/healthconnect-problem-definition.png" alt="HealthConnect Problem Definition" onerror="this.style.display='none'"/>
+      </div>
+      <div>
+        <div class="il">Week 7 Results: Model Testing &amp; Validation</div>
+        <img class="ci" src="https://raw.githubusercontent.com/csebueng-spec/csebueng-spec.github.io/main/healthconnect-week7-results.png" alt="HealthConnect Week 7 Results" onerror="this.style.display='none'"/>
+      </div>
+    </div>
+    <div class="cb">
+      <p style="color:#9ca3af;font-size:.85rem;margin-bottom:.9rem;font-style:italic">The clinic and its dataset are synthetic, supplied by the programme, so the model would need testing on real data before use.</p>
+      <div class="tls">Python &middot; Scikit-learn &middot; Logistic Regression &middot; Random Forest</div>
+      <div class="cl">
+        <a href="https://github.com/csebueng-spec/HEALCHCONNECTCLINIC---Week-7-No-Show-Prediction" target="_blank">Repository</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOR THE ROLE -->
+<div class="s" id="role">
+  <div class="sl">Fit</div>
+  <h2>What this work shows for the role</h2>
+  <p style="color:#6b7280;margin-bottom:2rem;font-size:.93rem">The internship asks for dataset review, validation, cleaning, creating datasets and making data useful to clients. This is where each one appears in my work.</p>
+  <div class="dv"></div>
+  <div class="rt">
+    <table>
+      <thead><tr><th>The role asks for</th><th>Where I have done it</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Review and analyse datasets</td>
+          <td>Employee Attrition (8 charts, 7 questions). Heart Disease analysis (14 visualisations, 5 statistical tests). Global Superstore dashboard (12.64M in sales across 25K orders).</td>
+        </tr>
+        <tr>
+          <td>Validate data inputs</td>
+          <td>Checked every dataset for missing values, duplicates, impossible values and constant columns before using it.</td>
+        </tr>
+        <tr>
+          <td>Clean and organise datasets</td>
+          <td>Median imputation, outlier capping, and consistent encoding of categories. Raw, cleaned and ready-to-use files kept separate in the repository.</td>
+        </tr>
+        <tr>
+          <td>Create new datasets</td>
+          <td>heart_cleaned.csv, heart_ml_ready.csv and heart_final_modelling.csv, with new features built from the raw columns.</td>
+        </tr>
+        <tr>
+          <td>Turn data into something clients understand</td>
+          <td>Business Understanding, Data Visualisation, Data Preprocessing and Business Insights reports written in plain language with charts, and a Power BI dashboard for a retail business.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="s" id="contact">
+  <div class="cbox">
+    <div class="sl" style="display:flex;justify-content:center">Get in Touch</div>
+    <h2 style="margin-top:.3rem">Let's connect</h2>
+    <div class="dv" style="margin:.5rem auto 1.5rem"></div>
+    <p>Open to collaborations, feedback, and opportunities in data science and analytics.</p>
+    <a class="btn bp" href="mailto:csebueng@gmail.com">csebueng@gmail.com</a>
+    <br/><br/>
+    <a class="btn bo" href="https://github.com/csebueng-spec/csebueng-spec.github.io" target="_blank">GitHub Profile</a>
+  </div>
+</div>
+
+<footer>&copy; 2026 Christina Sebueng &nbsp;&middot;&nbsp; Built with purpose.</footer>
+
+</body>
+</html>
+
+<footer>Von Syntea mit KI erstellt – bitte prüfe die Inhalte.</footer>
